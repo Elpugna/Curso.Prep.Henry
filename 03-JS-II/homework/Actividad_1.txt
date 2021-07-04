@@ -1,0 +1,21 @@
+1. En un archivo de texto separado que debes crear, escribe explicaciones de los siguientes conceptos como si se lo estuvieras explicando a un niño de 12 años. Hacer esto te ayudará a descubrir rápidamente cualquier agujero en tu comprensión.
+
+* `for`
+    El ciclo for, es una forma de escribir códio y de manejar el flujo del programa para poder repetir una serie de acciones que se quiere hacer.
+    El ciclo se escribe de la forma 
+            for(variableIteración; Condición; Paso){
+                Código a ejecutar
+            }
+    Entonces nosotros lo que hacemos es darle un valor a la variable de iteración, variable que iremos aumentando o decreciendo según lo 
+    indique el paso hasta que la condición se transforme en falsa. En ese momento el código a ejecutar ya no se ejecuta y el programa sigue
+    con su funcionamiento normal
+
+* `&&`, `||`, `!`
+    Estos son operadores para expresiones que tienen un valor de verdad que puede ser verdadero o falso. El "&&" se lee como "y" y el "||" como "o".
+    De esta manera si tengo una deición:
+            if ((expresión1 || expresión2) && expresión3){
+                codigo a ejecutar
+            }
+    Tiene que ser verdadera O la expresión1 O la expresión 2 para que lo que hay entre paréntesis sea Verdadero Y si la expresión3 
+    también es verdadera, entonces se ejecutará el código.
+     El símbolo "!" sirve para negar el valor de verdad de algo. Por ejemplo: !true da false. y !false da true.
