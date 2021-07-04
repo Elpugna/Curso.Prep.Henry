@@ -1,0 +1,26 @@
+1. En un archivo de texto separado que debes crear, escribe explicaciones de los siguientes conceptos como si se lo estuvieras explicando a un niño de 12 años. Hacer esto te ayudará a descubrir rápidamente cualquier agujero en tu comprensión.
+
+	* Variables
+        Las variables son nombrecitos de cosas o elementos que le ponemos a ciertas cosas. Por ejemplo podemos ponerle el nombre FechaNacimiento a 
+    una variable que contenga una fecha de nacimiento de alguien. Es importante el uso de variables porque podemos estar trabajando con muchas 
+    personas y en ese caso usando el mismo nombrecito, podemos ir cambiando la fecha, lo que hace que tengamos que escribir menos código.
+
+	* Strings
+        Las strings son un tipo de dato. Así como existen los números, existen también las letras y también existen las palabras o combinaciones 
+    de palabras que se las llama strings. Esto se hace porque hay muchas cosas que se hacen con las strings entonces se organizan en una clase 
+    que es como un grupo de datos cuya característica en común en este caso es estar compuestos por varios caracters, y tienen distintos métodos
+     y operaciones con los mismos.
+
+	* Funciones (argumentos, `return`)
+        Las funciones son pedacitos de código que tienen un nombre y hacen algo. Algunas tienen argumentos 
+        o datos que se le dan porque los necesita para hacer ese "algo" y otras no. Generalmente se llaman o invocan a las funciones para no tener
+        que escribir muchas veces lo mismo, entonces ahorramos código. También suelen tener en su definición (que es el pedacito de código donde están
+        escritas) una palabrita reservada llamada "return" que se usa para indicarle que devuelva un cierto resultado. si hacemos suma(2,3) + 6 el
+        el resultado de la suma de 2 + 3 va a ser retornado por la función suma para luego sumarle 6.
+
+	* Declaraciones `if`
+        Las declaraciones "if" permiten tomar deciciones en base a una condición. "si pasa esto" entonces se ejecuta esta parte del código, si no, se ejecuta la otra.
+
+	* Valores booleanos (`true`, `false`)
+        Los valores booleanos son valores que pueden estar entre dos opciones VERDADERO o FALSO. Son útiles por ejemplo en las condiciones en 
+        declaraciones como el "if". También tienen un equivalente numérico, donde el 0 equivale al Falso y cualquier número al True.
