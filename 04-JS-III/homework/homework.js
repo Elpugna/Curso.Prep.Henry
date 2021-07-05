@@ -238,14 +238,16 @@ function continueStatement(numero) {
   // Tu código: 
   var aux = [];
   let i = 0;
-  while(i<18){
-    i+=2
-    if(i/2===5){
-      aux.push(numero+i); 
-      continue
+  var suma = numero;
+  while(i<10){
+    if(i === 5){
+      i++
+      continue;
     }else{
-      aux.push(numero+i);
+      suma += 2;
+      aux.push(suma);
     }
+    i++
   }return aux;
 }
 
