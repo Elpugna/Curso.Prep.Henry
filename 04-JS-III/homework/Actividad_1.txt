@@ -1,0 +1,10 @@
+1. En un archivo de texto separado que debes crear, escribe explicaciones de los siguientes conceptos como si se lo estuvieras explicando a un niño de 12 años. Hacer esto te ayudará a descubrir rápidamente cualquier agujero en tu comprensión.
+
+	* Arrays
+    Los arrays o arreglos son grupos de datos. Se parecen a las variables en el sentido de que adentro se pueden guardar valores, solo que
+    en los arreglos se pueden guardar muchos valores. Como se almacenan muchos datos, se puede acceder a cada uno en particular aprovechando la
+    numeración de los mismos. Por ejemplo:
+        arreglo = ["h", "o" , "l", "a", "!"]
+        este arreglo contiene todas las letras del la palabra "hola!". Para acceder a la "l" por ejemplo usamos arreglo[2], esto es porque el 
+        índice empieza en el 0.
+    
