@@ -1,0 +1,29 @@
+1. En un archivo de texto separado que debes crear, escribe explicaciones de los siguientes conceptos como si se lo estuvieras explicando a un niño de 12 años. Hacer esto te ayudará a descubrir rápidamente cualquier agujero en tu comprensión.
+
+	* Objetos
+      En javscript todo son objetos. Los objetos son una cosa que permite modelar lo que hay en el mundo real, porque un objeto tiene
+     sus características particulares y sus usos específicos. De esta forma, hay algunos tipos de objetos básicos en JS, uno de ellos
+     son las funciones, otros los tipos de datos y otros son objetos propiamente dichos creados por el programador con un nombre que se
+     adecúa a las necesidades del proyecto.
+      Estos últimos, a los que más generalmente se les refiere cuando se habla de "objetos" de Javascript, son objetos que tienen sus
+      características como "atributos" con valores (como puede ser Objeto cuadrado un atributo es 4 lados, la medida de cada lado, etc),
+      y también tienen la capacidad de "hacer cosas", esto se llaman métodos, y son como funciones internas al objeto, accesadas por el
+      caracter punto ".". Un ejemplo de esto podría ser el método calcularArea() para un objeto cuadrado. Se llama de la forma cuadrado.calcularArea()
+
+
+	* Propiedades y Métodos
+      Explicado en el anterior
+
+	* Bucle `for…in`
+      El bucle for..in es un ciclo del tipo "for" solo que en lugar de tener tres partes, una donde se define una variable para iterar,
+     otra donde se establece una condición de continuación y otra donde se incrementa o decrementa la variable, tiene dos argumentos. El
+     primero de ellos, es un selector cuyo nombre seleccionamos nosotros, que hace referencia a cada propiedad o atributo de un objeto,
+     el nombre del objeto es el otro argumento que toma el bucle for..in, y permite acceder de esa manera a cada uno de los pares clave-valor.
+      El bucle queda: for (clave in objeto){ sentencias a ejecutar para cada atributo.}
+
+	* Notación de puntos vs notación de corchetes
+      Las notaciones nos sirven para acceder a los métodos o las propiedades de los atributos. La notación de punto ya la comenté en la
+     primer definición, se usa el punto para llamar al método o para acceder al atributo (la forma cuadrado.medidaLado por ejemplo para
+     acceder al valor de la medida del cuadrado). Otra manera de acceder es mediante el uso de corchetes con el nombre del atributo, se
+     usa de la forma cuadrado["medidaLado"] y se accede al valor que guarda ese atributo, en el caso de las funciones solo nos devuelve
+     si es una función, pero no se pueden invocar desde la notación de corchetes, por lo que cuadrado["calcularArea()"] nos da indefinido.
