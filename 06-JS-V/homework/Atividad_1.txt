@@ -1,0 +1,64 @@
+1. En un archivo de texto separado que debes crear, escribe explicaciones de los siguientes conceptos como si se lo estuvieras explicando a un niño de 12 años. Hacer esto te ayudará a descubrir rápidamente cualquier agujero en tu comprensión.
+
+* `prototype`
+   Cuando queremos crear objetos con características similares, nos conviene crear una clase a partir de la cual crear los objetos
+  para así definir las funciones y características propias de los múltiples objetos una sola vez y ahorrar código. En este contexto,
+  "prototype" es un atributo que tienen las clases de objetos. No lo crea el usuario sino que se define en una clase superior llamada
+  Objects y se hereda a todas las sub clases de objetos creadas por el usuario. Esta propiedad es como una plantilla o un esquema del
+  objeto que se va a crear. Supongamos el constructor de la clase Persona se define como:
+                        function Persona(nombre, apellido, edad){
+                            this.nombre=nombre,
+                            this.apellido=apellido,
+                            this.edad=edad
+                        }
+    Persona.prototype es un argumento que nos permite usar esa "plantilla" de persona genérica que definimos arriba para un caso
+   particular. Si queremos crear a una persona x llamada "juan", no podemos poner Persona.nombre = "juan" porque no tiene sentido. 
+   Además no podemos de esa manera crear a muchas personas distintas, esto lo hacemos creando instancias de objetos pertenecientes a la
+   clase Persona. Como podemos tener muchas clases distintas, cada una con sus atributos y métodos específicas, el atributo "prototype"
+   nos permite decirle al intérprete (a la hora de crear un objeto nuevo; que en nuestro ejemplo sería una instancia de persona) que
+   el objeto que queremos crear no es un objeto independiente, sino que su "diseño" por así decirlo es el que viene de la clase Persona.
+    Entonces nosotros ahora podemos decir " var persona1 = Object.create(Persona.prototype)" de modo que ahora la variable persona1 tiene
+   su atributo nombre, su atributo apellido y su atributo edad (todos con valor "undefined", listos para ser modificados con los respectivos
+   valores reales) y tiene también disponibles a través del operador punto "." el llamado a las funciones propias de la clase Persona. 
+
+* _Constructors_ (de Clases)
+   Constructores de clases se les dice a las funciones (cuyo nombre es el de la clase) que no son funciones convencionales en el sentido
+  de que retornan un valor como dato, sino que lo son en el sentido de que se usa la palabra reservada "function" y la sintaxis declarativa
+  así como la estructura del bloque son similares. Dentro del mismo se declara la plantilla de lo que será un objeto dado. En el caso
+  anterior veíamos la un ejemplo sencillo de la declaración del constructor de la clase Persona. A este constructor se le agrega internamente
+  atributos como prototype y demás que hacen a la sintaxis del lenguaje. 
+
+  **//No tiene que ver con lo anterior, pero en otro contexto donde aparece la palabra "constructor" con otro significado, está explicado a continuación:
+   Cuando tenemos una subclase, como puede ser la clase Alumno, que es una subclase de persona (porque obviamente los alumnos son personas),
+  deben heredar los atributos y por sobre todo los métodos de la clase padre. Esto se logra igualando el prototipo de la clase Alumno con
+  el prototipo de la clase Persona. Esto hace que a la hora de crear un objeto alumno1 por ejemplo, tengamos las propiedades y los métodos
+  que tenía la Clase Persona y también aquellos que definimos para la clase Alumno. En este contexto, debemos también cambiar el nombre
+  del "constructor". Este constructor es un atributo del prototipo de la clase Alumno (que en realidad es el de la clase Persona porque 
+  lo igualamos para que cada alumno pudiera acceder a sus métodos) que sirve para identificarlo. Si escribimos en la consola 
+  "Alumno.prototype.constructor" vemos que dice Persona por las razones antes mencionadas, por eso el identificador "constructor" tenemos
+  que cambiarlo por "Alumno" en este contexto. "Alumno.prototype.constructor = "Alumno"" hace el trabajo. 
+
+  **//Por último, desde el Ecmascript standard 2015(ES2015) conocido com ES6 (Es la 6ta Edición de Ecmascript), aparece la palabra "constructor" en la declaración de clases
+   En esta sintaxis, la clase Persona y la subclase Alumno se implementarían de la siguiente manera:
+            Class Persona{
+                constructor(nombre, apellido, edad){ //así se detallan los argumentos, ya no es como si fuera una función.
+                    this.nombre=edad,
+                    this.apellido=apellido,
+                    this.edad=edad
+                };
+                saludar(){  //Así se implementan los métodos
+                    console.log(`Hola soy ${this.nombre}!`);
+                };
+            }
+    Para la sublcase Alumno, que toma todos los parámetros y métodos de Persona, sería como sigue:
+            Class Alumno extends Persona{
+                //Si no ponemos "constructor(){}" queda por defecto heredando los parámetros de la superclase Persona
+                constructor(nombre,apellido,edad, escuela){
+                    super(nombre, apellido, edad); //super() pasa los argumentos a la clase Person para que se inicien los parámetros que pertenecen a cada alumno pero que son heredados de la clase Persona.
+                    this.escuela=escuela; //Este es un atributo propio de la subclase
+                };
+                //tiene un método propio de clase.
+                dondeEstudio(){console.log(`Yo estoy estudiando en ${this.escuela}`)};
+            }
+
+
