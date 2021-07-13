@@ -1,0 +1,28 @@
+1. En un archivo de texto separado que debes crear, escribe explicaciones de los siguientes conceptos como si se lo estuvieras explicando a un niño de 12 años. Hacer esto te ayudará a descubrir rápidamente cualquier agujero en tu comprensión.
+
+* Funciones Callback
+  Las funciones Callback, son funciones que son aceptadas como parámetro de otras funciones. Sirven para darle más abstracción
+ a nuestro código, además de que nos permiten tener menos código. Un ejemplo de funciones que aceptan callbacks en sus argumentos son
+ algunos métodos de las instancias de arreglos, como puede ser .map() o .filter() o también .forEach(). Por ejemplo si tomamos el .forEach()
+ hace que a cada elemento del array que le pasemos le haga "algo". Este "algo" es otra función, que será nuestra Callback function,
+ que puede estar definida previamente en el código o podemos definirla dentro de los paréntesis del forEach(), y se denomina función
+ anónima. Un ejemplo se ve a continuación:
+
+    var array = [1,2,3,4,5,"a","b","c","d","e"];
+
+    //Sabemos que .filter() devuelve un array con aquellos elementos del array al que se aplica donde la condición es cierta.
+    //Para tener solo los números, podemos hacer lo siguiente (Esta función está escrita de esta manera porque es una forma de declarar funciones en JavasCript sin escribir mucho)
+    var arrayNumeros = array.filter((a) => typeof(a) === "number");
+    console.log(arrayNumeros);  //-> [1, 2, 3, 4, 5]
+    
+    //también podemos tener definida previamente la función:
+    function esLetra(elemento){
+        if(typeof(elemento) == "string"){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //Y la usamos del siguiente modo:
+    var arrayLetras = array.filter(esLetra)
+    console.log(arrayLetras); //-> ["a", "b", "c", "d", "e"]
