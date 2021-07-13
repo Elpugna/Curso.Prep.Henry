@@ -28,10 +28,10 @@ function sumarArray(numeros, cb) {
   let suma = numeros.reduce((m,n)=>m+n);
   cb(suma);
   /* También podría haber hecho:
-    function suma(a,b){
-      return a+b;
+    function suma(acumulador,actual){
+      return acumulador+actual;
     }
-    let suma = numeros.reduce(suma);
+    let suma = numeros.reduce(suma, 0); //no tiene el 0 arriba porque es opcional y si no tiene nada agarra desde el principio el indice(osea desde 0)
   */
 }
 
@@ -42,7 +42,14 @@ function forEach(array, cb) {
   for(let elemento of array){
     cb(elemento);
   }
+  /*  También podría haber sido:
+    array.forEach((el,index)=> cb(el));
 
+    // O podría haber sido:
+    array.forEach(function(el,index){
+      cb(el);
+    });
+  */
 }
 
 function map(array, cb) {
@@ -58,7 +65,12 @@ function map(array, cb) {
     auxArr.push(cb(elem));
   }
   auxArr.length = array.length;
-  return auxArr;*/
+  return auxArr;
+  
+  // O:
+  var aux = array.map(function(el){return cb(el)});
+  return aux;
+  */
 
 }
 
